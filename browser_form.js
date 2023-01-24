@@ -124,13 +124,21 @@ const monitorValidation = (() => {
     }))
 
     submitBtn.addEventListener('click', () => {
-        if (emailInput.validity.valid &&
-            countryInput.validity.valid &&
-            zipcodeInput.validity.valid &&
-            pwInput.validity.valid &&
-            pwConfirmInput.validity.valid) {
-            alert('all values are valid')
-        }
+        if (countryInput.value === '0') {
+            text = 'Please select a country from the dropdown';
+            countrySpan.textContent = text;
+            makeSpanVisible('country-span');
+            document.querySelector('.select-border').setAttribute('style', 'border: none')
+        } else
+            if (emailInput.validity.valid &&
+                countryInput.validity.valid &&
+                zipcodeInput.validity.valid &&
+                pwInput.validity.valid &&
+                pwConfirmInput.validity.valid) {
+                alert('all values are valid');
+                document.querySelector('.select-border').setAttribute('style', 'border: 2px solid limegreen');
+
+            }
     })
 
 })();

@@ -155,22 +155,32 @@
      display: flex;
      flex-direction: column;
      padding-bottom: 2rem;
+     height: 6rem;
  }
 
  span {
      display: flex;
      visibility: hidden;
+     font-size: small;
 
-     width: 15rem;
+     max-width: 20rem;
      height: auto;
 
      flex-wrap: wrap;
 
      background-color: rgb(198, 17, 17);
+     
+     position: relative;
 
  }
 
  select {
      width: 100%;
      padding-top: 4px;
+ }
+
+ form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
  }
